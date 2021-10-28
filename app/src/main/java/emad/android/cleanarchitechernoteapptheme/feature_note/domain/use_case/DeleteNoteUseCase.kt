@@ -1,0 +1,12 @@
+package emad.android.cleanarchitechernoteapptheme.feature_note.domain.use_case
+
+import emad.android.cleanarchitechernoteapptheme.feature_note.domain.model.Note
+import emad.android.cleanarchitechernoteapptheme.feature_note.domain.repository.NoteRepository
+
+class DeleteNoteUseCase(
+    private val repository: NoteRepository
+) {
+    suspend operator fun invoke(note: Note){
+        repository.deleteNote(note)
+    }
+}
